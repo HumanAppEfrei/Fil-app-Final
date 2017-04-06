@@ -9,8 +9,8 @@ export class TaskService{
     }
     
 
-    getMaladies(){
-        return this.http.get('maladie/tasks/')
+    getMaladie(idUser){
+        return this.http.get('maladie/'+idUser)
             .map(res => res.json());
     }
     

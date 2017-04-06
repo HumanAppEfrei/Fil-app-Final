@@ -1,3 +1,4 @@
+"use strict";
 /* tslint:disable:no-unused-variable */
 var testing_1 = require('@angular/core/testing');
 var posts_component_1 = require('./posts.component');

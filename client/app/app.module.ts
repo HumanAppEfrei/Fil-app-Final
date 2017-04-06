@@ -13,6 +13,7 @@ import {PreventionComponent} from './components/prevention/prevention.component'
 import {DiagnostiqueComponent} from './components/diagnostique/diagnostique.component';
 import {TraitementComponent} from './components/traitement/traitement.component';
 import {RemissionComponent} from './components/remission/remission.component';
+import {MaladiesComponent} from './components/maladies/maladies.component';
 
 import {InvitationsComponent} from './components/invitations/invitations.component';
 import {PostsComponent} from './components/posts/posts.component';
@@ -25,7 +26,7 @@ import {TaskService} from './services/task.service';
 @NgModule({
   imports: [ BrowserModule, routing, HttpModule, FormsModule ],
   declarations: [ AppComponent, HomeComponent, ProfileComponent, RemissionComponent, DiagnostiqueComponent,
-  					TraitementComponent, PreventionComponent, InvitationsComponent, PostsComponent],
+  					TraitementComponent, PreventionComponent, InvitationsComponent, PostsComponent, MaladiesComponent],
   bootstrap: [ AppComponent ],
   providers: [
     appRoutingProviders,
