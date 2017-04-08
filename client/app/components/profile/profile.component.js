@@ -14,6 +14,7 @@ var ProfileComponent = (function () {
     function ProfileComponent(auth) {
         this.auth = auth;
         this.profile = JSON.parse(localStorage.getItem('profile'));
+        // this.token = JSON.parse(localStorage.getItem('id_token'));
         console.log(this.profile);
     }
     ProfileComponent = __decorate([
