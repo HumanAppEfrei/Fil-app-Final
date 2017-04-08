@@ -31,6 +31,10 @@ var Auth = (function () {
         this.lock.show();
     };
     ;
+    Auth.prototype.showToken = function () {
+        alert('id_token');
+    };
+    ;
     Auth.prototype.authenticated = function () {
         // Check if there's an unexpired JWT
         // This searches for an item in localStorage with key == 'id_token'

@@ -9,23 +9,24 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var auth_service_1 = require('../../services/auth.service');
-var ProfileComponent = (function () {
-    function ProfileComponent(auth) {
-        this.auth = auth;
-        this.profile = JSON.parse(localStorage.getItem('profile'));
-        // this.token = JSON.parse(localStorage.getItem('id_token'));
-        console.log(this.profile);
+var http_1 = require('@angular/http');
+require('rxjs/add/operator/catch');
+require('rxjs/add/operator/map');
+var CentreService = (function () {
+    function CentreService(http) {
+        this.http = http;
+        this.mongoURL = "https://api.mlab.com/api/1/databases/my_filapp_database/collections/";
+        this.apiKey = "QASWwDr0wEXEyyBUSniEc8mtRvqdRUuL";
     }
-    ProfileComponent = __decorate([
-        core_1.Component({
-            moduleId: module.id,
-            selector: 'profile',
-            templateUrl: 'profile.component.html'
-        }), 
-        __metadata('design:paramtypes', [auth_service_1.Auth])
-    ], ProfileComponent);
-    return ProfileComponent;
+    CentreService.prototype.getCentres = function () {
+        return this.http.get(this.mongoURL + "Centres" + "?apiKey=" + this.apiKey)
+            .map(function (res) { return res.json(); });
+    };
+    CentreService = __decorate([
+        core_1.Injectable(), 
+        __metadata('design:paramtypes', [http_1.Http])
+    ], CentreService);
+    return CentreService;
 }());
-exports.ProfileComponent = ProfileComponent;
-//# sourceMappingURL=profile.component.js.map
+exports.CentreService = CentreService;
+//# sourceMappingURL=centre.service.js.map
