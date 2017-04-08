@@ -14,17 +14,92 @@ var MaladiesComponent = (function () {
     function MaladiesComponent(taskService) {
         var _this = this;
         this.taskService = taskService;
-        this.idUser = 1;
-        console.log("test");
-        this.taskService.getMaladie(this.idUser).subscribe(function (maladie) {
-            _this.maladie = maladie;
+        this.idUser = 2;
+        this.areMyInvitaionsSelected = false;
+        this.areMyFriendsSelected = false;
+        this.taskService.getInvitations(this.idUser)
+            .subscribe(function (tasks) {
+            _this.tasks = tasks;
         });
-        console.log(this.maladie);
     }
-    MaladiesComponent.prototype.getMaladie = function () {
+    MaladiesComponent.prototype.showHideInvitation = function () {
+        this.areMyInvitaionsSelected = !this.areMyInvitaionsSelected;
+        console.log("hey");
+    };
+    MaladiesComponent.prototype.showHideFriend = function () {
+        this.areMyFriendsSelected = !this.areMyFriendsSelected;
+        console.log("hey");
+    };
+    MaladiesComponent.prototype.getResearched = function (pseudo) {
         var _this = this;
-        this.taskService.getMaladie(this.idUser).subscribe(function (maladie) {
-            _this.maladie = maladie;
+        this.taskService.getResearched(pseudo)
+            .subscribe(function (researched) {
+            _this.researched = researched;
+            console.log(_this.researched);
+        });
+    };
+    MaladiesComponent.prototype.getUsers = function () {
+        var _this = this;
+        this.taskService.getUsers()
+            .subscribe(function (users) {
+            _this.users = users;
+            console.log(_this.users);
+        });
+    };
+    MaladiesComponent.prototype.getFriends = function () {
+        var _this = this;
+        this.taskService.getFriends(this.idUser)
+            .subscribe(function (friends) {
+            _this.friends = friends;
+            console.log(_this.friends);
+        });
+    };
+    MaladiesComponent.prototype.deleteFriend = function (id) {
+        var tasks = this.tasks;
+        this.taskService.deleteFriend(id).subscribe(function (data) {
+            if (data.n == 1) {
+                var i = 0;
+                for (i = 0; i < tasks.length; i++) {
+                    if (tasks[i]._id == id) {
+                        tasks.splice(i, 1);
+                    }
+                }
+            }
+        });
+    };
+    MaladiesComponent.prototype.addInvitation = function (event) {
+        var _this = this;
+        event.preventDefault();
+        var newTask = {
+            title: this.title,
+            isDone: false
+        };
+        this.taskService.addInvitation(newTask)
+            .subscribe(function (task) {
+            _this.tasks.push(task);
+            _this.title = '';
+        });
+    };
+    MaladiesComponent.prototype.deleteInvitation = function (id) {
+        var tasks = this.tasks;
+        this.taskService.deleteInvitation(id).subscribe(function (data) {
+            if (data.n == 1) {
+                for (var i = 0; i < tasks.length; i++) {
+                    if (tasks[i]._id == id) {
+                        tasks.splice(i, 1);
+                    }
+                }
+            }
+        });
+    };
+    MaladiesComponent.prototype.updateInvitationStatus = function (task) {
+        var _task = {
+            _id: task._id,
+            title: task.title,
+            isDone: !task.isDone
+        };
+        this.taskService.updateInvitationStatus(_task).subscribe(function (data) {
+            task.isDone = !task.isDone;
         });
     };
     MaladiesComponent = __decorate([

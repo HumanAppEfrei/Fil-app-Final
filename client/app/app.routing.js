@@ -7,6 +7,8 @@ var diagnostique_component_1 = require('./components/diagnostique/diagnostique.c
 var traitement_component_1 = require('./components/traitement/traitement.component');
 var remission_component_1 = require('./components/remission/remission.component');
 var invitations_component_1 = require('./components/invitations/invitations.component');
+var maladies_component_1 = require('./components/maladies/maladies.component');
+var posts_component_1 = require('./components/posts/posts.component');
 var auth_guard_1 = require('./auth.guard');
 var appRoutes = [
     {
@@ -37,6 +39,14 @@ var appRoutes = [
     {
         path: 'invitation',
         component: invitations_component_1.InvitationsComponent
+    },
+    {
+        path: 'maladie',
+        component: maladies_component_1.MaladiesComponent
+    },
+    {
+        path: 'post',
+        component: posts_component_1.PostsComponent
     }
 ];
 exports.appRoutingProviders = [];

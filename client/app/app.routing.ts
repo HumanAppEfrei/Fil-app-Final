@@ -8,6 +8,10 @@ import {DiagnostiqueComponent} from './components/diagnostique/diagnostique.comp
 import {TraitementComponent} from './components/traitement/traitement.component';
 import {RemissionComponent} from './components/remission/remission.component';
 import {InvitationsComponent} from './components/invitations/invitations.component';
+import {MaladiesComponent} from './components/maladies/maladies.component';
+import {PostsComponent} from './components/posts/posts.component';
+
+
 import {AuthGuard} from './auth.guard';
 
 const appRoutes: Routes= [
@@ -39,6 +43,14 @@ const appRoutes: Routes= [
 	{
     	path:'invitation',
         component:InvitationsComponent
+    },
+    {
+        path:'maladie',
+        component:MaladiesComponent
+    },
+    {
+        path:'post',
+        component:PostsComponent
     }
 
 

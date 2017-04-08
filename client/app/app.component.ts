@@ -7,7 +7,7 @@ import {TaskService} from './services/task.service';
     moduleId: module.id,
     selector: 'my-app',
     templateUrl: 'app.component.html',
-  	 //providers:[TaskService]
+  	directives:[TaskService]
 })
 export class AppComponent {
     constructor(private auth:Auth){
