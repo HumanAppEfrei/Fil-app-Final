@@ -34,7 +34,9 @@ var PostsComponent = (function () {
     PostsComponent.prototype.save = function (task) {
         var _task = {
             _id: task._id,
-            title: task.title,
+            pseudo: task.title,
+            adresse: task.adresse,
+            mobile: task.mobile,
             email: task.email,
             utilisateur: task.utilisateur,
             naissance: task.naissance,
