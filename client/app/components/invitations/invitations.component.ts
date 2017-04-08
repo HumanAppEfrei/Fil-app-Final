@@ -16,9 +16,9 @@ export class InvitationsComponent {
     users: User[];
     friends: Friend[];
     title: string;
-    idUser: number = 2;
-    researched: User;
-
+    idUser: number;
+    researched: any;
+    idUser = 2;
     areMyInvitaionsSelected: boolean = false;
     areMyFriendsSelected: boolean = false;
 
@@ -29,7 +29,7 @@ export class InvitationsComponent {
 
     
     showHideFriend() {
-        this.areMyFriendsSelected = !this.areMyFriendsSelected;
+        areMyFriendsSelected = !areMyFriendsSelected;
         console.log("hey");
     }
 
@@ -63,8 +63,7 @@ export class InvitationsComponent {
         
         this.taskService.deleteFriend(id).subscribe(data => {
             if(data.n == 1){
-					var i = 0;
-                for(i = 0;i < tasks.length;i++){
+                for(var i = 0;i < tasks.length;i++){
                     if(tasks[i]._id == id){
                         tasks.splice(i, 1);
                     }
@@ -123,5 +122,4 @@ export class InvitationsComponent {
 
 
 
-    
 }

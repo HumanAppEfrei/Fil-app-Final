@@ -1,10 +1,10 @@
-
+<h1>
   <nav class="navbar navbar-inverse">
   <div class="container-fluid">
     <ul class="nav navbar-nav">
-      <li> <a href="#">Accueil</a> </li>
-      <li> <a (click)="showHideInvitation()"  (click)="getFriends()">My Friends</a></li>
-      <li> <a href="#">Send an invitation</a> </li>
+      <li> <a >Accueil</a> </li>
+      <li> <a  (click)="showHideInvitation()"  (click)="getFriends()">My Friends</a></li>
+      <li> <a >Send an invitation</a> </li>
       <li> <a  (click)="showHideInvitation()"
       (click)="getUsers()" >My invitations</a> </li>
     </ul>
@@ -43,7 +43,7 @@
 </div>
 
 <span *ngIf="areMyInvitaionsSelected">
-	<div class="task-list">
+  <div class="task-list">
   <h1><b>My Invitation</b></h1>
     <div *ngFor="let task of tasks">
         <div class="col-md-1">
@@ -93,4 +93,4 @@
 
 
 </span>
-
+</h1>

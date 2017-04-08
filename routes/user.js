@@ -5,7 +5,7 @@ var db = mongojs('mongodb://Mehdiii:azerty@ds119618.mlab.com:19618/my_filapp_dat
 
 // Get All Tasks
 router.get('/tasks', function(req, res, next){
-    db.invitation.find(function(err, tasks){
+    db.user.find(function(err, tasks){
         if(err){
             res.send(err);
         }
@@ -14,7 +14,16 @@ router.get('/tasks', function(req, res, next){
 });
 
 router.get('/task/:id', function(req, res, next){
-    db.invitation.find({idReceiver: req.params.id},function(err, tasks){
+    db.user.find({_id: req.params.id},function(err, tasks){
+        if(err){
+            res.send(err);
+        }
+        res.json(tasks);
+    });
+});
+
+router.get('/task/pseudo/:pseudo', function(req, res, next){
+    db.user.find({pseudo: req.params.pseudo},function(err, tasks){
         if(err){
             res.send(err);
         }
@@ -32,7 +41,7 @@ router.post('/task', function(req, res, next){
             "error": "Bad Data"
         });
     } else {
-        db.invitation.save(task, function(err, task){
+        db.user.save(task, function(err, task){
             if(err){
                 res.send(err);
             }
@@ -43,7 +52,7 @@ router.post('/task', function(req, res, next){
 
 // Delete Task
 router.delete('/task/:id', function(req, res, next){
-    db.invitation.remove({_id: mongojs.ObjectId(req.params.id)}, function(err, task){
+    db.user.remove({_id: mongojs.ObjectId(req.params.id)}, function(err, task){
         if(err){
             res.send(err);
         }
@@ -70,7 +79,7 @@ router.put('/task/:id', function(req, res, next){
             "error":"Bad Data"
         });
     } else {
-        db.invitation.update({_id: mongojs.ObjectId(req.params.id)},updTask, {}, function(err, task){
+        db.user.update({_id: mongojs.ObjectId(req.params.id)},updTask, {}, function(err, task){
         if(err){
             res.send(err);
         }

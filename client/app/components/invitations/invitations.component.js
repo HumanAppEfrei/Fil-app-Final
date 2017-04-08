@@ -27,7 +27,7 @@ var InvitationsComponent = (function () {
         console.log("hey");
     };
     InvitationsComponent.prototype.showHideFriend = function () {
-        this.areMyFriendsSelected = !this.areMyFriendsSelected;
+        areMyFriendsSelected = !areMyFriendsSelected;
         console.log("hey");
     };
     InvitationsComponent.prototype.getResearched = function (pseudo) {
@@ -58,8 +58,7 @@ var InvitationsComponent = (function () {
         var tasks = this.tasks;
         this.taskService.deleteFriend(id).subscribe(function (data) {
             if (data.n == 1) {
-                var i = 0;
-                for (i = 0; i < tasks.length; i++) {
+                for (var i = 0; i < tasks.length; i++) {
                     if (tasks[i]._id == id) {
                         tasks.splice(i, 1);
                     }
