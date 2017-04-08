@@ -12,96 +12,28 @@ var core_1 = require('@angular/core');
 var task_service_1 = require('../../services/task.service');
 var MaladiesComponent = (function () {
     function MaladiesComponent(taskService) {
-        var _this = this;
         this.taskService = taskService;
-        this.idUser = 2;
-        this.areMyInvitaionsSelected = false;
-        this.areMyFriendsSelected = false;
-        this.taskService.getInvitations(this.idUser)
-            .subscribe(function (tasks) {
-            _this.tasks = tasks;
-        });
+        this.maladie = [];
+        this.id = "1";
     }
-    MaladiesComponent.prototype.showHideInvitation = function () {
-        this.areMyInvitaionsSelected = !this.areMyInvitaionsSelected;
-        console.log("hey");
-    };
-    MaladiesComponent.prototype.showHideFriend = function () {
-        this.areMyFriendsSelected = !this.areMyFriendsSelected;
-        console.log("hey");
-    };
-    MaladiesComponent.prototype.getResearched = function (pseudo) {
+    MaladiesComponent.prototype.ngOnInit = function () {
         var _this = this;
-        this.taskService.getResearched(pseudo)
-            .subscribe(function (researched) {
-            _this.researched = researched;
-            console.log(_this.researched);
+        this.taskService.getMaladie(this.id).subscribe(function (maladie) {
+            _this.maladie = maladie;
         });
+        this.detail(this.id);
     };
-    MaladiesComponent.prototype.getUsers = function () {
+    MaladiesComponent.prototype.detail = function (id) {
         var _this = this;
-        this.taskService.getUsers()
-            .subscribe(function (users) {
-            _this.users = users;
-            console.log(_this.users);
+        this.taskService.getMaladie(id).subscribe(function (maladie) {
+            _this.maladie = maladie;
+            console.log(_this.maladie);
         });
     };
-    MaladiesComponent.prototype.getFriends = function () {
-        var _this = this;
-        this.taskService.getFriends(this.idUser)
-            .subscribe(function (friends) {
-            _this.friends = friends;
-            console.log(_this.friends);
-        });
-    };
-    MaladiesComponent.prototype.deleteFriend = function (id) {
-        var tasks = this.tasks;
-        this.taskService.deleteFriend(id).subscribe(function (data) {
-            if (data.n == 1) {
-                var i = 0;
-                for (i = 0; i < tasks.length; i++) {
-                    if (tasks[i]._id == id) {
-                        tasks.splice(i, 1);
-                    }
-                }
-            }
-        });
-    };
-    MaladiesComponent.prototype.addInvitation = function (event) {
-        var _this = this;
-        event.preventDefault();
-        var newTask = {
-            title: this.title,
-            isDone: false
-        };
-        this.taskService.addInvitation(newTask)
-            .subscribe(function (task) {
-            _this.tasks.push(task);
-            _this.title = '';
-        });
-    };
-    MaladiesComponent.prototype.deleteInvitation = function (id) {
-        var tasks = this.tasks;
-        this.taskService.deleteInvitation(id).subscribe(function (data) {
-            if (data.n == 1) {
-                for (var i = 0; i < tasks.length; i++) {
-                    if (tasks[i]._id == id) {
-                        tasks.splice(i, 1);
-                    }
-                }
-            }
-        });
-    };
-    MaladiesComponent.prototype.updateInvitationStatus = function (task) {
-        var _task = {
-            _id: task._id,
-            title: task.title,
-            isDone: !task.isDone
-        };
-        this.taskService.updateInvitationStatus(_task).subscribe(function (data) {
-            task.isDone = !task.isDone;
-        });
-    };
+    __decorate([
+        core_1.Input(), 
+        __metadata('design:type', Object)
+    ], MaladiesComponent.prototype, "maladie", void 0);
     MaladiesComponent = __decorate([
         core_1.Component({
             moduleId: module.id,
