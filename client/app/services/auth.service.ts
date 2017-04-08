@@ -27,6 +27,11 @@ export class Auth {
     this.lock.show();
   };
 
+  public showToken()
+  {
+    alert('id_token');
+  };
+
   public authenticated() {
     // Check if there's an unexpired JWT
     // This searches for an item in localStorage with key == 'id_token'

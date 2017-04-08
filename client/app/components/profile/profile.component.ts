@@ -8,9 +8,10 @@ import {Auth} from '../../services/auth.service';
 })
 export class ProfileComponent { 
     profile:any;
-    
+    token:any;
     constructor(private auth:Auth){
         this.profile = JSON.parse(localStorage.getItem('profile'));
+       // this.token = JSON.parse(localStorage.getItem('id_token'));
         console.log(this.profile);
     }
 }
