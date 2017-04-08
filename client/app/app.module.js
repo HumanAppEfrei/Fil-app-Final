@@ -8,13 +8,13 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var core_1 = require('@angular/core');
 var platform_browser_1 = require('@angular/platform-browser');
 var http_1 = require('@angular/http');
 var forms_1 = require('@angular/forms');
 var app_routing_1 = require('./app.routing');
 var app_component_1 = require('./app.component');
 var angular2_jwt_1 = require('angular2-jwt');
+var core_1 = require('@angular/core');
 var home_component_1 = require('./components/home/home.component');
 var profile_component_1 = require('./components/profile/profile.component');
 var prevention_component_1 = require('./components/prevention/prevention.component');
@@ -43,7 +43,8 @@ var AppModule = (function () {
                 auth_service_1.Auth,
                 auth_guard_1.AuthGuard,
                 task_service_1.TaskService
-            ]
+            ],
+            schemas: [core_1.CUSTOM_ELEMENTS_SCHEMA]
         }), 
         __metadata('design:paramtypes', [])
     ], AppModule);

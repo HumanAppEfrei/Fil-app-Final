@@ -1,10 +1,10 @@
-import { NgModule }      from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import {HttpModule} from '@angular/http';
 import {FormsModule} from '@angular/forms';
 import {routing, appRoutingProviders} from './app.routing';
 import { AppComponent }  from './app.component';
 import {AUTH_PROVIDERS} from 'angular2-jwt';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 
 import {HomeComponent} from './components/home/home.component';
 import {ProfileComponent} from './components/profile/profile.component';
@@ -35,7 +35,9 @@ import {TaskService} from './services/task.service';
     Auth,
     AuthGuard,
 	TaskService
-  ]
+  ],
+  schemas:  [ CUSTOM_ELEMENTS_SCHEMA ]
+
 })
 
 export class AppModule { }
