@@ -15,19 +15,20 @@ var PostsComponent = (function () {
         this.taskService = taskService;
         // instantiate posts to an empty array
         this.posts = [];
-        this.id = "58409d102abbe219869ee1b0";
+        this.id = "1";
     }
     PostsComponent.prototype.ngOnInit = function () {
         var _this = this;
         // Retrieve posts from the API
-        this.taskService.getOnePost(this.id).subscribe(function (posts) {
+        this.taskService.getUser(this.id).subscribe(function (posts) {
             _this.posts = posts;
         });
+        this.detail(this.id);
     };
     PostsComponent.prototype.detail = function (id) {
         var _this = this;
-        this.taskService.getOnePost(id).subscribe(function (posts) {
-            _this.posts = posts;
+        this.taskService.getUser(id).subscribe(function (posts) {
+            _this.posts = posts[0];
         });
     };
     PostsComponent.prototype.save = function (task) {

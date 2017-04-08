@@ -11,20 +11,21 @@ export class PostsComponent implements OnInit {
 	 // instantiate posts to an empty array
 	@Input()
 	posts: any = [];
-	id: string ="58409d102abbe219869ee1b0";
+	id: string ="1";
 
 	constructor(private taskService: TaskService) { }
 
 	ngOnInit() {
 		// Retrieve posts from the API
-		this.taskService.getOnePost(this.id).subscribe(posts => {
+		this.taskService.getUser(this.id).subscribe(posts => {
 			this.posts = posts;
 		});
+		this.detail(this.id);
 	}
 	
 	detail(id){
-		this.taskService.getOnePost(id).subscribe(posts => {
-			this.posts = posts;
+		this.taskService.getUser(id).subscribe(posts => {
+			this.posts = posts[0];
 		});
 	}
 	
