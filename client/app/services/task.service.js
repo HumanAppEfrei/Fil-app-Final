@@ -84,6 +84,20 @@ var TaskService = (function () {
         return this.http.put('/task/task/' + task._id, JSON.stringify(task), { headers: headers })
             .map(function (res) { return res.json(); });
     };
+    TaskService.prototype.getTasks = function () {
+        return this.http.get('/task/tasks')
+            .map(function (res) { return res.json(); });
+    };
+    TaskService.prototype.addTask = function (newTask) {
+        var headers = new http_1.Headers();
+        headers.append('Content-Type', 'application/json');
+        return this.http.post('/task/task', JSON.stringify(newTask), { headers: headers })
+            .map(function (res) { return res.json(); });
+    };
+    TaskService.prototype.deleteTask = function (id) {
+        return this.http.delete('/task/task/' + id)
+            .map(function (res) { return res.json(); });
+    };
     TaskService = __decorate([
         core_1.Injectable(), 
         __metadata('design:paramtypes', [http_1.Http])

@@ -10,6 +10,7 @@ import {RemissionComponent} from './components/remission/remission.component';
 import {InvitationsComponent} from './components/invitations/invitations.component';
 import {MaladiesComponent} from './components/maladies/maladies.component';
 import {PostsComponent} from './components/posts/posts.component';
+import {TasksComponent} from './components/tasks/tasks.component';
 
 
 import {AuthGuard} from './auth.guard';
@@ -51,7 +52,12 @@ const appRoutes: Routes= [
     {
         path:'post',
         component:PostsComponent
+    },
+     {
+        path:'task',
+        component:TasksComponent
     }
+
 
 
 ];
