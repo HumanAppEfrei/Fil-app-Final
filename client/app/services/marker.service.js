@@ -1,14 +1,9 @@
 "use strict";
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = Object.setPrototypeOf ||
-        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
+var __extends = (this && this.__extends) || function (d, b) {
+    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+    function __() { this.constructor = d; }
+    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+};
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -18,16 +13,14 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-Object.defineProperty(exports, "__esModule", { value: true });
-var core_1 = require("@angular/core");
-var init_markers_1 = require("../init-markers");
+var core_1 = require('@angular/core');
+var init_markers_1 = require('../init-markers');
 var MarkerService = (function (_super) {
     __extends(MarkerService, _super);
     function MarkerService() {
-        var _this = _super.call(this) || this;
+        _super.call(this);
         console.log('MarkerService Initialized...');
-        _this.load();
-        return _this;
+        this.load();
     }
     MarkerService.prototype.getMarkers = function () {
         var markers = JSON.parse(localStorage.getItem('markers'));
@@ -64,11 +57,11 @@ var MarkerService = (function (_super) {
         // Set ls markers again
         localStorage.setItem('markers', JSON.stringify(markers));
     };
+    MarkerService = __decorate([
+        core_1.Injectable(), 
+        __metadata('design:paramtypes', [])
+    ], MarkerService);
     return MarkerService;
 }(init_markers_1.Init));
-MarkerService = __decorate([
-    core_1.Injectable(),
-    __metadata("design:paramtypes", [])
-], MarkerService);
 exports.MarkerService = MarkerService;
 //# sourceMappingURL=marker.service.js.map

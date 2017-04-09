@@ -8,10 +8,9 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-Object.defineProperty(exports, "__esModule", { value: true });
-var core_1 = require("@angular/core");
-var marker_service_1 = require("../../services/marker.service");
-var centre_service_1 = require("../../services/centre.service");
+var core_1 = require('@angular/core');
+var marker_service_1 = require('../../services/marker.service');
+var centre_service_1 = require('../../services/centre.service');
 var PreventionComponent = (function () {
     function PreventionComponent(_markerService, centreService) {
         var _this = this;
@@ -54,16 +53,16 @@ var PreventionComponent = (function () {
         var newLng = $event.coords.lng;
         this._markerService.updateMarker(updMarker, newLat, newLng);
     };
+    PreventionComponent = __decorate([
+        core_1.Component({
+            moduleId: module.id,
+            selector: 'prevention',
+            templateUrl: 'prevention.component.html',
+            providers: [marker_service_1.MarkerService, centre_service_1.CentreService]
+        }), 
+        __metadata('design:paramtypes', [marker_service_1.MarkerService, centre_service_1.CentreService])
+    ], PreventionComponent);
     return PreventionComponent;
 }());
-PreventionComponent = __decorate([
-    core_1.Component({
-        moduleId: module.id,
-        selector: 'prevention',
-        templateUrl: 'prevention.component.html',
-        providers: [marker_service_1.MarkerService, centre_service_1.CentreService]
-    }),
-    __metadata("design:paramtypes", [marker_service_1.MarkerService, centre_service_1.CentreService])
-], PreventionComponent);
 exports.PreventionComponent = PreventionComponent;
 //# sourceMappingURL=prevention.component.js.map

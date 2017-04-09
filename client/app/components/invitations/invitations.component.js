@@ -8,9 +8,8 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-Object.defineProperty(exports, "__esModule", { value: true });
-var core_1 = require("@angular/core");
-var task_service_1 = require("../../services/task.service");
+var core_1 = require('@angular/core');
+var task_service_1 = require('../../services/task.service');
 var InvitationsComponent = (function () {
     function InvitationsComponent(taskService) {
         var _this = this;
@@ -113,15 +112,15 @@ var InvitationsComponent = (function () {
             task.isDone = !task.isDone;
         });
     };
+    InvitationsComponent = __decorate([
+        core_1.Component({
+            moduleId: module.id,
+            selector: 'invitations',
+            templateUrl: 'invitations.component.html'
+        }), 
+        __metadata('design:paramtypes', [task_service_1.TaskService])
+    ], InvitationsComponent);
     return InvitationsComponent;
 }());
-InvitationsComponent = __decorate([
-    core_1.Component({
-        moduleId: module.id,
-        selector: 'invitations',
-        templateUrl: 'invitations.component.html'
-    }),
-    __metadata("design:paramtypes", [task_service_1.TaskService])
-], InvitationsComponent);
 exports.InvitationsComponent = InvitationsComponent;
 //# sourceMappingURL=invitations.component.js.map

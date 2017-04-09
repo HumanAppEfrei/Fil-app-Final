@@ -8,9 +8,8 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-Object.defineProperty(exports, "__esModule", { value: true });
-var core_1 = require("@angular/core");
-var droits_service_1 = require("../../services/droits.service");
+var core_1 = require('@angular/core');
+var droits_service_1 = require('../../services/droits.service');
 var Droits = (function () {
     function Droits() {
     }
@@ -58,16 +57,16 @@ var DroitsComponent = (function () {
             this._droitsservice.getText().subscribe(function (res) { return _this.setData(res); });
         }
     };
+    DroitsComponent = __decorate([
+        core_1.Component({
+            moduleId: module.id,
+            selector: 'droits',
+            templateUrl: 'droits.component.html',
+            providers: [droits_service_1.HTTPDroitsService]
+        }), 
+        __metadata('design:paramtypes', [droits_service_1.HTTPDroitsService])
+    ], DroitsComponent);
     return DroitsComponent;
 }());
-DroitsComponent = __decorate([
-    core_1.Component({
-        moduleId: module.id,
-        selector: 'droits',
-        templateUrl: 'droits.component.html',
-        providers: [droits_service_1.HTTPDroitsService]
-    }),
-    __metadata("design:paramtypes", [droits_service_1.HTTPDroitsService])
-], DroitsComponent);
 exports.DroitsComponent = DroitsComponent;
 //# sourceMappingURL=droits.component.js.map

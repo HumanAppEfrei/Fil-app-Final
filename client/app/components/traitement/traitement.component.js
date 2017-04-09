@@ -8,20 +8,19 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-Object.defineProperty(exports, "__esModule", { value: true });
-var core_1 = require("@angular/core");
+var core_1 = require('@angular/core');
 var TraitementComponent = (function () {
     function TraitementComponent() {
     }
+    TraitementComponent = __decorate([
+        core_1.Component({
+            moduleId: module.id,
+            selector: 'traitement',
+            templateUrl: 'traitement.component.html'
+        }), 
+        __metadata('design:paramtypes', [])
+    ], TraitementComponent);
     return TraitementComponent;
 }());
-TraitementComponent = __decorate([
-    core_1.Component({
-        moduleId: module.id,
-        selector: 'traitement',
-        templateUrl: 'traitement.component.html'
-    }),
-    __metadata("design:paramtypes", [])
-], TraitementComponent);
 exports.TraitementComponent = TraitementComponent;
 //# sourceMappingURL=traitement.component.js.map

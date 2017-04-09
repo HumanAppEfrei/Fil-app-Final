@@ -8,20 +8,19 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-Object.defineProperty(exports, "__esModule", { value: true });
-var core_1 = require("@angular/core");
+var core_1 = require('@angular/core');
 var DepistageComponent = (function () {
     function DepistageComponent() {
     }
+    DepistageComponent = __decorate([
+        core_1.Component({
+            moduleId: module.id,
+            selector: 'depistage',
+            templateUrl: 'depistage.component.html'
+        }), 
+        __metadata('design:paramtypes', [])
+    ], DepistageComponent);
     return DepistageComponent;
 }());
-DepistageComponent = __decorate([
-    core_1.Component({
-        moduleId: module.id,
-        selector: 'depistage',
-        templateUrl: 'depistage.component.html'
-    }),
-    __metadata("design:paramtypes", [])
-], DepistageComponent);
 exports.DepistageComponent = DepistageComponent;
 //# sourceMappingURL=depistage.component.js.map

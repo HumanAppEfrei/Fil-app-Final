@@ -1,5 +1,4 @@
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
 var Centres = (function () {
     function Centres(nom, adr, numero, lat, lng) {
         this.nom = nom;

@@ -8,10 +8,9 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-Object.defineProperty(exports, "__esModule", { value: true });
-var core_1 = require("@angular/core");
-var task_service_1 = require("../../services/task.service");
-var router_1 = require("@angular/router");
+var core_1 = require('@angular/core');
+var task_service_1 = require('../../services/task.service');
+var router_1 = require('@angular/router');
 var PostsComponent = (function () {
     function PostsComponent(taskService, router) {
         this.taskService = taskService;
@@ -54,19 +53,19 @@ var PostsComponent = (function () {
         });
         this.validation = "Enregistrement effectuer";
     };
+    __decorate([
+        core_1.Input(), 
+        __metadata('design:type', String)
+    ], PostsComponent.prototype, "validation", void 0);
+    PostsComponent = __decorate([
+        core_1.Component({
+            moduleId: module.id,
+            selector: 'app-posts',
+            templateUrl: 'posts.component.html'
+        }), 
+        __metadata('design:paramtypes', [task_service_1.TaskService, router_1.Router])
+    ], PostsComponent);
     return PostsComponent;
 }());
-__decorate([
-    core_1.Input(),
-    __metadata("design:type", String)
-], PostsComponent.prototype, "validation", void 0);
-PostsComponent = __decorate([
-    core_1.Component({
-        moduleId: module.id,
-        selector: 'app-posts',
-        templateUrl: 'posts.component.html'
-    }),
-    __metadata("design:paramtypes", [task_service_1.TaskService, router_1.Router])
-], PostsComponent);
 exports.PostsComponent = PostsComponent;
 //# sourceMappingURL=posts.component.js.map
