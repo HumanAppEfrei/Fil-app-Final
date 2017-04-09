@@ -36,8 +36,11 @@ export class PostsComponent implements OnInit {
             adresse: task.adresse;
             mobile: task.mobile;
 			email: task.email,
-			utilisateur: task.utilisateur,
+			type_pathologie: task.type_pathologie,
 			naissance: task.naissance,
+			hopital: task.hopital,
+			medecin: task.medecin,
+			nom_contact_urgence: task.nom_contact_urgence,
             isDone: !task.isDone
         };
         
