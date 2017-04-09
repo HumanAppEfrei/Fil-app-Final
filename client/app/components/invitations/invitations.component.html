@@ -30,7 +30,7 @@
                   {{user.pseudo}} 
                   </div>     
                   <div class="col-md-4">
-                    <input type="button" value="Add" class="btn btn-success">    
+                    <input type="button" value="Add" class="btn btn-success" (submit)="addTask($event,user._id)">    
                   </div>
                   <br/><br/>
                 </span>

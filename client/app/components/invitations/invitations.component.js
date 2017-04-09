@@ -21,6 +21,16 @@ var InvitationsComponent = (function () {
             .subscribe(function (tasks) {
             _this.tasks = tasks;
         });
+        this.taskService.getUsers()
+            .subscribe(function (users) {
+            _this.users = users;
+            console.log(_this.users);
+        });
+        this.taskService.getFriends(this.idUser)
+            .subscribe(function (friends) {
+            _this.friends = friends;
+            console.log(_this.friends);
+        });
     }
     InvitationsComponent.prototype.showHideInvitation = function () {
         this.areMyInvitaionsSelected = !this.areMyInvitaionsSelected;
@@ -66,12 +76,13 @@ var InvitationsComponent = (function () {
             }
         });
     };
-    InvitationsComponent.prototype.addInvitation = function (event) {
+    InvitationsComponent.prototype.addInvitation = function (event, idUser2) {
         var _this = this;
         event.preventDefault();
         var newTask = {
-            title: this.title,
-            isDone: false
+            idReceiver: idUser2,
+            idFollower: this.idUser,
+            text: "Test"
         };
         this.taskService.addInvitation(newTask)
             .subscribe(function (task) {
