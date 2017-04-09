@@ -65,21 +65,56 @@ router.put('/task/:id', function(req, res, next){
     var task = req.body;
     var updTask = {};
     
-    if(task.isDone){
-        updTask.isDone = task.isDone;
+    if(task.pseudo){
+        updTask.pseudo = task.pseudo;
     }
     
-    if(task.title){
-        updTask.title = task.title;
+    if(task.adresse){
+        updTask.adresse = task.adresse;
     }
-    
+	
+    if(task.mobile){
+        updTask.mobile = task.mobile;
+    }
+	
+	if(task.email){
+        updTask.email = task.email;
+    }
+	
+	if(task.type_pathologie){
+        updTask.type_pathologie = task.type_pathologie;
+    }
+		
+	if(task.naissance){
+        updTask.naissance = task.naissance;
+    }
+		
+	if(task.hopital){
+        updTask.hopital = task.hopital;
+    }
+		
+	if(task.medecin){
+        updTask.medecin = task.medecin;
+    }
+		
+	if(task.nom_contact_urgence){
+        updTask.nom_contact_urgence = task.nom_contact_urgence;
+    }
+	
+	if(task.maladie_id){
+        updTask.maladie_id = task.maladie_id;
+    }
+	
+	if(task.hospitalisation){
+        updTask.hospitalisation = task.hospitalisation;
+    }
     if(!updTask){
         res.status(400);
         res.json({
             "error":"Bad Data"
         });
     } else {
-        db.user.update({_id: mongojs.ObjectId(req.params.id)},updTask, {}, function(err, task){
+        db.user.update({_id: req.params.id},updTask, {}, function(err, task){
         if(err){
             res.send(err);
         }
