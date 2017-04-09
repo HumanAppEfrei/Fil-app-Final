@@ -33,8 +33,8 @@ export class PostsComponent implements OnInit {
 		var _task = {
             _id:task._id,
             pseudo: task.title,
-            adresse: task.adresse;
-            mobile: task.mobile;
+            adresse: task.adresse,
+            mobile: task.mobile,
 			email: task.email,
 			type_pathologie: task.type_pathologie,
 			naissance: task.naissance,
