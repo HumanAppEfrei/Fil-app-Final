@@ -3,7 +3,7 @@
   <div class="container-fluid">
     <ul class="nav navbar-nav">
       <li> <a >Accueil</a> </li>
-      <li> <a  (click)="showHideInvitation()"  (click)="getFriends()">My Friends</a></li>
+      <li> <a  (click)="showHideInvitation()" (click)="getUsers()" (click)="getFriends()">My Friends</a></li>
       <li> <a >Send an invitation</a> </li>
       <li> <a  (click)="showHideInvitation()"
       (click)="getUsers()" >My invitations</a> </li>
@@ -30,7 +30,7 @@
                   {{user.pseudo}} 
                   </div>     
                   <div class="col-md-4">
-                    <input type="button" value="Add" class="btn btn-success">    
+                    <input type="button" value="Add" class="btn btn-success" (submit)="addTask($event,user._id)">    
                   </div>
                   <br/><br/>
                 </span>
@@ -79,7 +79,6 @@
             <div *ngFor="let user of users">
                 <span *ngIf="friend.idFollower == user._id ">
                 {{user.pseudo}}     
-
                 </span>
             </div>
         </div> 

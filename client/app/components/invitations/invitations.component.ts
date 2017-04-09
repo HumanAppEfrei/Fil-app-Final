@@ -1,9 +1,6 @@
 import { Component } from '@angular/core';
 import {TaskService} from '../../services/task.service';
 import {Task} from '../../../Task';
-import {Friend} from '../../../Task';
-import {User} from '../../../Task';
-import {Auth} from '../../services/auth.service';
 
 @Component({
   moduleId: module.id,
@@ -77,14 +74,25 @@ export class InvitationsComponent {
             .subscribe(tasks => {
                 this.tasks = tasks;
             });
+        this.taskService.getUsers()
+            .subscribe(users => {
+                this.users = users;
+                console.log(this.users);
+            });
+        this.taskService.getFriends(this.idUser)
+        .subscribe(friends => {
+            this.friends = friends;
+            console.log(this.friends);
+        });
 
     }
 
-    addInvitation(event){
+    addInvitation(event,idUser2){
         event.preventDefault();
         var newTask = {
-            title: this.title,
-            isDone: false
+             idReceiver: idUser2,
+             idFollower: this.idUser,
+             text: "Test"
         }
         
         this.taskService.addInvitation(newTask)
@@ -122,4 +130,5 @@ export class InvitationsComponent {
 
 
 
+    
 }
