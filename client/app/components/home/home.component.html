@@ -1,120 +1,85 @@
- <style type="text/css">
-	    div.thumbnail {
-	      height: 350px;
-	      text-align: center;
-	    }
-	  </style>
-<h1>Bienvenue sur Fil'App !</h1>
-<span *ngIf="auth.authenticated()">
-	<div class="alert alert-success" >Vous êtes connecté</div>
+<h1>Welcome !</h1>
+<div class="alert alert-success" *ngIf="auth.authenticated()">You are logged in</div>
+<div class="alert alert-danger" *ngIf="!auth.authenticated()">You are not logged in</div>
+  <style type="text/css">
+    div.thumbnail {
+      height: 350px;
+      text-align: center;
+    }
+  </style>
+  <div class="row">
+  <div class="col-sm-6 col-md-3">
+    <div class="thumbnail">
+      <img src="../../../images/005-hospital.png" alt="icone compliqué">
+      <div class="caption">
+        <h3>Depistage</h3>
+        <p>Trouver le centre de depistage le plus proche</p>
+        <p><a routerLink="/prevention" class="btn btn-primary" role="button">Acceder a l'espace</a></p>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-6 col-md-3">
+    <div class="thumbnail">
+      <img src="../../../images/003-medicine.png" alt="icone compliqué">
+      <div class="caption">
+        <h3>Prevention</h3>
+        <p>Acceder à un espace dédie au depistage de cancer</p>
+        <p><a routerLink="/depistage" class="btn btn-primary" role="button">Acceder a l'espace</a></p>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-6 col-md-3">
+    <div class="thumbnail">
+      <img src="../../../images/001-clipboard.png" alt="icone compliqué">
 
-	 
-	  <div class="row">
-	  <div class="col-sm-6 col-md-3">
-	    <div class="thumbnail">
-	      <img src="../../../images/005-hospital.png" alt="icone compliqué">
-	      <div class="caption">
-	        <h3>Depistage</h3>
-	        <p>Trouver le centre de depistage le plus proche</p>
-	        <p><a routerLink="/prevention" class="btn btn-primary" role="button">Acceder a l'espace</a></p>
-	      </div>
-	    </div>
-	  </div>
-	  <div class="col-sm-6 col-md-3">
-	    <div class="thumbnail">
-	      <img src="../../../images/003-medicine.png" alt="icone compliqué">
-	      <div class="caption">
-	        <h3>Prevention</h3>
-	        <p>Acceder à un espace dédie au depistage de cancer</p>
-	        <p><a routerLink="/depistage" class="btn btn-primary" role="button">Acceder a l'espace</a></p>
-	      </div>
-	    </div>
-	  </div>
-	  <div class="col-sm-6 col-md-3">
-	    <div class="thumbnail">
-	      <img src="../../../images/001-clipboard.png" alt="icone compliqué">
+      <div class="caption">
+        <h3>Mes informations</h3>
+        <p>Visualiser, completer et/ou modifier mes informations personnels</p>
+        <p><a routerLink="/post" class="btn btn-primary" role="button">Acceder a l'espace</a></p>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-6 col-md-3">
+    <div class="thumbnail">
+      <img src="../../../images/006-business.png" alt="icone compliqué">
+      <div class="caption">
+        <h3>Mes relations</h3>
+        <p>Ajouter des relations à mon espace</p>
+        <p><a routerLink="/invitation" class="btn btn-primary" role="button">Acceder a l'espace</a></p>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-6 col-md-3">
+    <div class="thumbnail">
+      <img src="../../../images/002-report.png" alt="icone compliqué">
+      <div class="caption">
+        <h3>Mon espace notes</h3>
+        <p>Ajouter et/ou visualiser vos notes pour ne rien oublier</p>
+        <p><a routerLink="/task" class="btn btn-primary" role="button">Acceder a l'espace</a></p>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-6 col-md-3">
+    <div class="thumbnail">
+      <img src="../../../images/007-droit.png" alt="icone compliqué">
+      <div class="caption">
+        <h3>Mes droits</h3>
+        <p>Consulter mes droits</p>
+        <p><a href="#" class="btn btn-primary" role="button">Acceder a l'espace</a></p>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-6 col-md-3">
+    <div class="thumbnail">
+      <img src="../../../images/008-information.png" alt="icone compliqué">
+      <div class="caption">
+        <h3>Informations</h3>
+        <p>Acceder à des informations concernant ma pathologie</p>
+        <p><a routerLink="/maladie" class="btn btn-primary" role="button">Acceder a l'espace</a></p>
+      </div>
+    </div>
+  </div>
+</div>
 
-	      <div class="caption">
-	        <h3>Mes informations</h3>
-	        <p>Visualiser, completer et/ou modifier mes informations personnels</p>
-	        <p><a routerLink="/post" class="btn btn-primary" role="button">Acceder a l'espace</a></p>
-	      </div>
-	    </div>
-	  </div>
-	  <div class="col-sm-6 col-md-3">
-	    <div class="thumbnail">
-	      <img src="../../../images/006-business.png" alt="icone compliqué">
-	      <div class="caption">
-	        <h3>Mes relations</h3>
-	        <p>Ajouter des relations à mon espace</p>
-	        <p><a routerLink="/invitation" class="btn btn-primary" role="button">Acceder a l'espace</a></p>
-	      </div>
-	    </div>
-	  </div>
-	  <div class="col-sm-6 col-md-3">
-	    <div class="thumbnail">
-	      <img src="../../../images/002-report.png" alt="icone compliqué">
-	      <div class="caption">
-	        <h3>Mon espace notes</h3>
-	        <p>Ajouter et/ou visualiser vos notes pour ne rien oublier</p>
-	        <p><a routerLink="/task" class="btn btn-primary" role="button">Acceder a l'espace</a></p>
-	      </div>
-	    </div>
-	  </div>
-	  <div class="col-sm-6 col-md-3">
-	    <div class="thumbnail">
-	      <img src="../../../images/007-droit.png" alt="icone compliqué">
-	      <div class="caption">
-	        <h3>Mes droits</h3>
-	        <p>Consulter mes droits</p>
-	        <p><a href="#" class="btn btn-primary" role="button">Acceder a l'espace</a></p>
-	      </div>
-	    </div>
-	  </div>
-	  <div class="col-sm-6 col-md-3">
-	    <div class="thumbnail">
-	      <img src="../../../images/008-information.png" alt="icone compliqué">
-	      <div class="caption">
-	        <h3>Informations</h3>
-	        <p>Acceder à des informations concernant ma pathologie</p>
-	        <p><a routerLink="/maladie" class="btn btn-primary" role="button">Acceder a l'espace</a></p>
-	      </div>
-	    </div>
-	  </div>
-	</div>
-</span>
-<span *ngIf="!auth.authenticated()">
-	<div class="alert alert-danger" >Vous n'êtes pas connecté <p>Connectez-vous pour acceder à toutes les fonctionalités</p></div>
-	  <div class="row">
-		  <div class="col-sm-6 col-md-3">
-		    <div class="thumbnail">
-		      <img src="../../../images/005-hospital.png" alt="icone compliqué">
-		      <div class="caption">
-		        <h3>Depistage</h3>
-		        <p>Trouver le centre de depistage le plus proche</p>
-		        <p><a routerLink="/prevention" class="btn btn-primary" role="button">Acceder a l'espace</a></p>
-		      </div>
-		    </div>
-		  </div>
-		  <div class="col-sm-6 col-md-3">
-		    <div class="thumbnail">
-		      <img src="../../../images/003-medicine.png" alt="icone compliqué">
-		      <div class="caption">
-		        <h3>Prevention</h3>
-		        <p>Acceder à un espace dédie au depistage de cancer</p>
-		        <p><a routerLink="/depistage" class="btn btn-primary" role="button">Acceder a l'espace</a></p>
-		      </div>
-		    </div>
-		  </div>
-		  <div class="col-sm-6 col-md-3">
-		    <div class="thumbnail">
-		      <img src="../../../images/007-droit.png" alt="icone compliqué">
-		      <div class="caption">
-		        <h3>Mes droits</h3>
-		        <p>Consulter mes droits</p>
-		        <p><a href="#" class="btn btn-primary" role="button">Acceder a l'espace</a></p>
-		      </div>
-		    </div>
-		  </div>
-	</div>
-</span>
+
+        
