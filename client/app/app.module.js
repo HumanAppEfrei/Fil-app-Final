@@ -22,6 +22,7 @@ var remission_component_1 = require("./components/remission/remission.component"
 var maladies_component_1 = require("./components/maladies/maladies.component");
 var tasks_component_1 = require("./components/tasks/tasks.component");
 var depistage_component_1 = require("./components/depistage/depistage.component");
+var droits_component_1 = require("./components/droits/droits.component");
 var invitations_component_1 = require("./components/invitations/invitations.component");
 var posts_component_1 = require("./components/posts/posts.component");
 var auth_service_1 = require("./services/auth.service");
@@ -36,7 +37,7 @@ AppModule = __decorate([
     core_1.NgModule({
         imports: [platform_browser_1.BrowserModule, app_routing_1.routing, http_1.HttpModule, forms_1.FormsModule],
         declarations: [app_component_1.AppComponent, home_component_1.HomeComponent, profile_component_1.ProfileComponent, remission_component_1.RemissionComponent, diagnostique_component_1.DiagnostiqueComponent,
-            traitement_component_1.TraitementComponent, prevention_component_1.PreventionComponent, invitations_component_1.InvitationsComponent, posts_component_1.PostsComponent, maladies_component_1.MaladiesComponent, tasks_component_1.TasksComponent, depistage_component_1.DepistageComponent,],
+            traitement_component_1.TraitementComponent, prevention_component_1.PreventionComponent, invitations_component_1.InvitationsComponent, posts_component_1.PostsComponent, maladies_component_1.MaladiesComponent, tasks_component_1.TasksComponent, depistage_component_1.DepistageComponent, droits_component_1.DroitsComponent],
         bootstrap: [app_component_1.AppComponent],
         providers: [
             app_routing_1.appRoutingProviders,

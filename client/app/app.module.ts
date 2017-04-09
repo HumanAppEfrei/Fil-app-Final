@@ -30,7 +30,7 @@ import {TaskService} from './services/task.service';
 @NgModule({
   imports: [ BrowserModule, routing, HttpModule, FormsModule ],
   declarations: [ AppComponent, HomeComponent, ProfileComponent, RemissionComponent, DiagnostiqueComponent,
-  					TraitementComponent, PreventionComponent, InvitationsComponent, PostsComponent, MaladiesComponent,TasksComponent, DepistageComponent, /*DroitsComponent*/],
+  					TraitementComponent, PreventionComponent, InvitationsComponent, PostsComponent, MaladiesComponent,TasksComponent, DepistageComponent, DroitsComponent],
   bootstrap: [ AppComponent ],
   providers: [
     appRoutingProviders,

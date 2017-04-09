@@ -12,6 +12,7 @@ var maladies_component_1 = require("./components/maladies/maladies.component");
 var posts_component_1 = require("./components/posts/posts.component");
 var tasks_component_1 = require("./components/tasks/tasks.component");
 var depistage_component_1 = require("./components/depistage/depistage.component");
+var droits_component_1 = require("./components/droits/droits.component");
 var auth_guard_1 = require("./auth.guard");
 var appRoutes = [
     {
@@ -58,11 +59,11 @@ var appRoutes = [
     {
         path: 'depistage',
         component: depistage_component_1.DepistageComponent
-    } /*,
+    },
     {
-        path:'droit',
-        component:DroitsComponent
-    }*/
+        path: 'droit',
+        component: droits_component_1.DroitsComponent
+    }
 ];
 exports.appRoutingProviders = [];
 exports.routing = router_1.RouterModule.forRoot(appRoutes);
