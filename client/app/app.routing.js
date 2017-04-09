@@ -10,6 +10,7 @@ var invitations_component_1 = require('./components/invitations/invitations.comp
 var maladies_component_1 = require('./components/maladies/maladies.component');
 var posts_component_1 = require('./components/posts/posts.component');
 var tasks_component_1 = require('./components/tasks/tasks.component');
+var depistage_component_1 = require('./components/depistage/depistage.component');
 var auth_guard_1 = require('./auth.guard');
 var appRoutes = [
     {
@@ -52,6 +53,10 @@ var appRoutes = [
     {
         path: 'task',
         component: tasks_component_1.TasksComponent
+    },
+    {
+        path: 'depistage',
+        component: depistage_component_1.DepistageComponent
     }
 ];
 exports.appRoutingProviders = [];

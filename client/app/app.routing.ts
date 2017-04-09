@@ -11,6 +11,7 @@ import {InvitationsComponent} from './components/invitations/invitations.compone
 import {MaladiesComponent} from './components/maladies/maladies.component';
 import {PostsComponent} from './components/posts/posts.component';
 import {TasksComponent} from './components/tasks/tasks.component';
+import {DepistageComponent} from './components/depistage/depistage.component';
 
 
 import {AuthGuard} from './auth.guard';
@@ -56,6 +57,10 @@ const appRoutes: Routes= [
      {
         path:'task',
         component:TasksComponent
+    },
+    {
+        path:'depistage',
+        component:DepistageComponent
     }
 
 
