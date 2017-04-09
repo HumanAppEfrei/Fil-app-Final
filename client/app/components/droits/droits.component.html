@@ -1,0 +1,43 @@
+<h1>Vos Droits</h1>
+<br>
+
+		<button md-raised-button color= "primary" class="menu"  (click) = "clickonme()" ><b>Mes droits</b></button><br/><br/>
+
+
+				
+				<ul *ngIf= "show" class="droitr"><br/> <!--Affiche touts les droits.-->
+
+
+							{{title}}
+					
+						<li *ngFor="let droitz of droits" (click) = "clickondroit(droitz)"><!--Quand on clique à une des droits nous faisons appel à la fonction clickondroit.-->
+							
+								{{droitz.droit}} 
+							
+						</li>
+					<div *ngIf= "droite" [hidden] = "!show2"> <!-- Afficher ou ne pas afficher le contenu des droits.
+
+						<!-- id : {{droite.id}} et droit: {{droite.droit}} -->
+						<div  [ngSwitch] = "identi">
+
+							 <div  class="test" id="Madiv"  *ngSwitchCase= 1>
+							 	
+								
+							 </div>
+  							 <div class="test" id="Madiv" *ngSwitchCase= 2>
+
+
+  							 </div>
+  							 <div class="test" id="Madiv" *ngSwitchCase= 3>
+
+  							 </div>
+  						</div>
+  					</div>
+
+				</ul>
+
+				
+
+			
+			
+				

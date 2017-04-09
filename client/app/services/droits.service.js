@@ -10,20 +10,25 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
-var auth_service_1 = require("../../services/auth.service");
-var HomeComponent = (function () {
-    function HomeComponent(auth) {
-        this.auth = auth;
+var http_1 = require("@angular/http");
+require("rxjs/add/operator/map");
+var HTTPDroitsService = (function () {
+    function HTTPDroitsService(_http) {
+        this._http = _http;
     }
-    return HomeComponent;
+    HTTPDroitsService.prototype.getText = function () {
+        /*
+        return this._http.get('test.php')
+        .map((response:Response) => response.text());
+        */
+        return this._http.get('http://localhost/test.php')
+            .map(function (res) { return res.text(); });
+    };
+    return HTTPDroitsService;
 }());
-HomeComponent = __decorate([
-    core_1.Component({
-        moduleId: module.id,
-        selector: 'Fill-home',
-        templateUrl: 'home.component.html'
-    }),
-    __metadata("design:paramtypes", [auth_service_1.Auth])
-], HomeComponent);
-exports.HomeComponent = HomeComponent;
-//# sourceMappingURL=home.component.js.map
+HTTPDroitsService = __decorate([
+    core_1.Injectable(),
+    __metadata("design:paramtypes", [http_1.Http])
+], HTTPDroitsService);
+exports.HTTPDroitsService = HTTPDroitsService;
+//# sourceMappingURL=droits.service.js.map

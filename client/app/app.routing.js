@@ -1,17 +1,19 @@
 "use strict";
-var router_1 = require('@angular/router');
-var home_component_1 = require('./components/home/home.component');
-var profile_component_1 = require('./components/profile/profile.component');
-var prevention_component_1 = require('./components/prevention/prevention.component');
-var diagnostique_component_1 = require('./components/diagnostique/diagnostique.component');
-var traitement_component_1 = require('./components/traitement/traitement.component');
-var remission_component_1 = require('./components/remission/remission.component');
-var invitations_component_1 = require('./components/invitations/invitations.component');
-var maladies_component_1 = require('./components/maladies/maladies.component');
-var posts_component_1 = require('./components/posts/posts.component');
-var tasks_component_1 = require('./components/tasks/tasks.component');
-var depistage_component_1 = require('./components/depistage/depistage.component');
-var auth_guard_1 = require('./auth.guard');
+Object.defineProperty(exports, "__esModule", { value: true });
+var router_1 = require("@angular/router");
+var home_component_1 = require("./components/home/home.component");
+var profile_component_1 = require("./components/profile/profile.component");
+var prevention_component_1 = require("./components/prevention/prevention.component");
+var diagnostique_component_1 = require("./components/diagnostique/diagnostique.component");
+var traitement_component_1 = require("./components/traitement/traitement.component");
+var remission_component_1 = require("./components/remission/remission.component");
+var invitations_component_1 = require("./components/invitations/invitations.component");
+var maladies_component_1 = require("./components/maladies/maladies.component");
+var posts_component_1 = require("./components/posts/posts.component");
+var tasks_component_1 = require("./components/tasks/tasks.component");
+var depistage_component_1 = require("./components/depistage/depistage.component");
+var droits_component_1 = require("./components/droits/droits.component");
+var auth_guard_1 = require("./auth.guard");
 var appRoutes = [
     {
         path: '',
@@ -57,6 +59,10 @@ var appRoutes = [
     {
         path: 'depistage',
         component: depistage_component_1.DepistageComponent
+    },
+    {
+        path: 'droit',
+        component: droits_component_1.DroitsComponent
     }
 ];
 exports.appRoutingProviders = [];

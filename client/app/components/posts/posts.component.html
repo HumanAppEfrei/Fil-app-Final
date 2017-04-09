@@ -1,7 +1,8 @@
 
 <div class="container">		  
 	<h1>Information du compte utilisateur</h1>
-	<h3>{{ posts.utilisateur }}</h3>
+	<h3>{{ posts.pseudo }}</h3>
+	<br>
 		<div >
 			<label>Pseudo: </label>
 			<input [(ngModel)]="posts.pseudo" placeholder="pseudo" />
@@ -13,12 +14,43 @@
 		</div>
 		<br>
 		<div >
+			<label>Adresse: </label>
+			<input [(ngModel)]="posts.adresse" placeholder="adresse" />
+		</div>
+		<br>
+		<div >
+			<label>Mobile: </label>
+			<input [(ngModel)]="posts.mobile" placeholder="mobile" />
+		</div>
+		<br>
+		<div >
 			<label>Naissance: </label>
 			<input [(ngModel)]="posts.naissance" placeholder="naissance" />
 		</div>
 		<br>
 		<div >
-			<input type="submit" (click)="save(posts)" value="modifier">    
+			<label>Pathologie: </label>
+			<input [(ngModel)]="posts.type_pathologie" placeholder="type_pathologie" />
 		</div>
+		<br>
+		<div >
+			<label>Hopital: </label>
+			<input [(ngModel)]="posts.hopital" placeholder="hopital" />
+		</div>
+		<br>
+		<div >
+			<label>Medecin: </label>
+			<input [(ngModel)]="posts.medecin" placeholder="medecin" />
+		</div>
+		<br>
+		<div >
+			<label>Contact en cas d'urgence: </label>
+			<input [(ngModel)]="posts.nom_contact_urgence" placeholder="nom_contact_urgence" />
+		</div>
+		<br>
+		<div >
+			<input type="button" (click)="save(posts)" value="Enregistrer modification">    
+		</div>
+		<h3>{{ validation }}</h3>
 		
 </div>

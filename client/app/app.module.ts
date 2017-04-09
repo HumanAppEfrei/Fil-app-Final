@@ -16,6 +16,8 @@ import {RemissionComponent} from './components/remission/remission.component';
 import {MaladiesComponent} from './components/maladies/maladies.component';
 import {TasksComponent} from './components/tasks/tasks.component';
 import {DepistageComponent} from './components/depistage/depistage.component';
+import {DroitsComponent} from './components/droits/droits.component'
+
 
 import {InvitationsComponent} from './components/invitations/invitations.component';
 import {PostsComponent} from './components/posts/posts.component';
@@ -28,7 +30,7 @@ import {TaskService} from './services/task.service';
 @NgModule({
   imports: [ BrowserModule, routing, HttpModule, FormsModule ],
   declarations: [ AppComponent, HomeComponent, ProfileComponent, RemissionComponent, DiagnostiqueComponent,
-  					TraitementComponent, PreventionComponent, InvitationsComponent, PostsComponent, MaladiesComponent,TasksComponent, DepistageComponent],
+  					TraitementComponent, PreventionComponent, InvitationsComponent, PostsComponent, MaladiesComponent,TasksComponent, DepistageComponent, DroitsComponent],
   bootstrap: [ AppComponent ],
   providers: [
     appRoutingProviders,

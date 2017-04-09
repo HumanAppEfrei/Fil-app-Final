@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import {TaskService} from '../../services/task.service';
 import {Task} from '../../../Task';
+import {Router} from '@angular/router'
 
 @Component({
   moduleId: module.id,
@@ -10,10 +11,11 @@ import {Task} from '../../../Task';
 export class PostsComponent implements OnInit {
 	 // instantiate posts to an empty array
 	@Input()
+	validation: string;
 	posts: any = [];
 	id: string ="1";
 
-	constructor(private taskService: TaskService) { }
+	constructor(private taskService: TaskService, private router: Router) { }
 
 	ngOnInit() {
 		// Retrieve posts from the API
@@ -32,12 +34,17 @@ export class PostsComponent implements OnInit {
 	save(task){
 		var _task = {
             _id:task._id,
-            pseudo: task.title,
-            adresse: task.adresse;
-            mobile: task.mobile;
+            pseudo: task.pseudo,
+            adresse: task.adresse,
+            mobile: task.mobile,
 			email: task.email,
-			utilisateur: task.utilisateur,
+			type_pathologie: task.type_pathologie,
 			naissance: task.naissance,
+			hopital: task.hopital,
+			medecin: task.medecin,
+			nom_contact_urgence: task.nom_contact_urgence,
+			maladie_id: task.maladie_id,
+			hospitalisation: task.hospitalisation,
             isDone: !task.isDone
         };
         
@@ -46,7 +53,6 @@ export class PostsComponent implements OnInit {
         this.taskService.updateStatus(_task).subscribe(data => {
             task.isDone = !task.isDone;
         });
-		location.reload();
+	this.validation="Enregistrement effectuer";
 	}
-
 }

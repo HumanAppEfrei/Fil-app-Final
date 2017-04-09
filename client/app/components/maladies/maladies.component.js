@@ -8,8 +8,9 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var core_1 = require('@angular/core');
-var task_service_1 = require('../../services/task.service');
+Object.defineProperty(exports, "__esModule", { value: true });
+var core_1 = require("@angular/core");
+var task_service_1 = require("../../services/task.service");
 var MaladiesComponent = (function () {
     function MaladiesComponent(taskService) {
         this.taskService = taskService;
@@ -30,19 +31,19 @@ var MaladiesComponent = (function () {
             console.log(_this.maladie);
         });
     };
-    __decorate([
-        core_1.Input(), 
-        __metadata('design:type', Object)
-    ], MaladiesComponent.prototype, "maladie", void 0);
-    MaladiesComponent = __decorate([
-        core_1.Component({
-            moduleId: module.id,
-            selector: 'maladies',
-            templateUrl: 'maladies.component.html'
-        }), 
-        __metadata('design:paramtypes', [task_service_1.TaskService])
-    ], MaladiesComponent);
     return MaladiesComponent;
 }());
+__decorate([
+    core_1.Input(),
+    __metadata("design:type", Object)
+], MaladiesComponent.prototype, "maladie", void 0);
+MaladiesComponent = __decorate([
+    core_1.Component({
+        moduleId: module.id,
+        selector: 'maladies',
+        templateUrl: 'maladies.component.html'
+    }),
+    __metadata("design:paramtypes", [task_service_1.TaskService])
+], MaladiesComponent);
 exports.MaladiesComponent = MaladiesComponent;
 //# sourceMappingURL=maladies.component.js.map

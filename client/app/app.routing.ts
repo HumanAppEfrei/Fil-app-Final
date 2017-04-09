@@ -12,6 +12,7 @@ import {MaladiesComponent} from './components/maladies/maladies.component';
 import {PostsComponent} from './components/posts/posts.component';
 import {TasksComponent} from './components/tasks/tasks.component';
 import {DepistageComponent} from './components/depistage/depistage.component';
+import {DroitsComponent} from './components/droits/droits.component'
 
 
 import {AuthGuard} from './auth.guard';
@@ -61,6 +62,10 @@ const appRoutes: Routes= [
     {
         path:'depistage',
         component:DepistageComponent
+    },
+    {
+        path:'droit',
+        component:DroitsComponent
     }
 
 
