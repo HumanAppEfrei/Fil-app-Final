@@ -1,11 +1,21 @@
-<a >
-<h1>Maladie :</h1>
-{{maladie._id}}
-<br/>
-{{maladie.nom}}
-<br/>
-{{maladie.description}}
-<br/>
-{{maladie.conseil}}
-</a>
-
+<style type="text/css">
+    h1 {
+        size: 350px;
+        text-align: center;
+    }
+    h2 {
+        size: 150px;
+        color: #6897BB;
+        font-style: italic;
+    }
+</style>
+<div class="col-sm-12">
+    <div class="thumbnail">
+        <h1>Ma Maladie</h1>
+        <h2>{{maladie.nom}}</h2>
+        <p>{{maladie.description}}</p>
+        <h1>Nos conseils</h1>
+        <p>{{maladie.conseil}}</p>
+    </div>
+    <p>Source: https://www.ligue-cancer.ne</p>
+</div>
