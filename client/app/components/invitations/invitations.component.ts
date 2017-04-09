@@ -1,9 +1,6 @@
 import { Component } from '@angular/core';
 import {TaskService} from '../../services/task.service';
 import {Task} from '../../../Task';
-import {Friend} from '../../../Task';
-import {User} from '../../../Task';
-import {Auth} from '../../services/auth.service';
 
 @Component({
   moduleId: module.id,
@@ -122,4 +119,5 @@ export class InvitationsComponent {
 
 
 
+    
 }

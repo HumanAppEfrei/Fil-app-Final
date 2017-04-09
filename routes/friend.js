@@ -13,7 +13,7 @@ router.get('/tasks', function(req, res, next){
     });
 });
 
-router.get('/task/:id', function(req, res, next){
+router.get('/task/:idFollower', function(req, res, next){
     db.friend.find({idReceiver: req.params.idFollower},function(err, tasks){
         if(err){
             res.send(err);

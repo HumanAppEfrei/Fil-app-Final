@@ -1,11 +1,14 @@
 import { Component } from '@angular/core';
 import {Auth} from '../../services/auth.service';
+import {PostsComponent} from './components/posts/posts.component';
 
 @Component({
     moduleId: module.id,
     selector: 'profile',
     templateUrl: 'profile.component.html'
 })
+
+
 export class ProfileComponent { 
     profile:any;
     
