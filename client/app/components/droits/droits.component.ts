@@ -10,7 +10,7 @@ export class Droits{
 }
 
 @Component ({
-
+    moduleId: module.id,
 	selector : 'droits',
 	templateUrl: 'droits.component.html',
 	providers:[HTTPDroitsService]

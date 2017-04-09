@@ -62,11 +62,11 @@ const appRoutes: Routes= [
     {
         path:'depistage',
         component:DepistageComponent
-    },
+    }/*,
     {
         path:'droit',
         component:DroitsComponent
-    }
+    }*/
 
 
 

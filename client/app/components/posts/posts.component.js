@@ -8,8 +8,9 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var core_1 = require('@angular/core');
-var task_service_1 = require('../../services/task.service');
+Object.defineProperty(exports, "__esModule", { value: true });
+var core_1 = require("@angular/core");
+var task_service_1 = require("../../services/task.service");
 var PostsComponent = (function () {
     function PostsComponent(taskService) {
         this.taskService = taskService;
@@ -38,8 +39,11 @@ var PostsComponent = (function () {
             adresse: task.adresse,
             mobile: task.mobile,
             email: task.email,
-            utilisateur: task.utilisateur,
+            type_pathologie: task.type_pathologie,
             naissance: task.naissance,
+            hopital: task.hopital,
+            medecin: task.medecin,
+            nom_contact_urgence: task.nom_contact_urgence,
             isDone: !task.isDone
         };
         this.taskService.updateStatus(_task).subscribe(function (data) {
@@ -47,19 +51,19 @@ var PostsComponent = (function () {
         });
         location.reload();
     };
-    __decorate([
-        core_1.Input(), 
-        __metadata('design:type', Object)
-    ], PostsComponent.prototype, "posts", void 0);
-    PostsComponent = __decorate([
-        core_1.Component({
-            moduleId: module.id,
-            selector: 'app-posts',
-            templateUrl: 'posts.component.html'
-        }), 
-        __metadata('design:paramtypes', [task_service_1.TaskService])
-    ], PostsComponent);
     return PostsComponent;
 }());
+__decorate([
+    core_1.Input(),
+    __metadata("design:type", Object)
+], PostsComponent.prototype, "posts", void 0);
+PostsComponent = __decorate([
+    core_1.Component({
+        moduleId: module.id,
+        selector: 'app-posts',
+        templateUrl: 'posts.component.html'
+    }),
+    __metadata("design:paramtypes", [task_service_1.TaskService])
+], PostsComponent);
 exports.PostsComponent = PostsComponent;
 //# sourceMappingURL=posts.component.js.map
