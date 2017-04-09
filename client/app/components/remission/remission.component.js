@@ -8,19 +8,20 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var core_1 = require('@angular/core');
+Object.defineProperty(exports, "__esModule", { value: true });
+var core_1 = require("@angular/core");
 var RemissionComponent = (function () {
     function RemissionComponent() {
     }
-    RemissionComponent = __decorate([
-        core_1.Component({
-            moduleId: module.id,
-            selector: 'remission',
-            templateUrl: 'remission.component.html'
-        }), 
-        __metadata('design:paramtypes', [])
-    ], RemissionComponent);
     return RemissionComponent;
 }());
+RemissionComponent = __decorate([
+    core_1.Component({
+        moduleId: module.id,
+        selector: 'remission',
+        templateUrl: 'remission.component.html'
+    }),
+    __metadata("design:paramtypes", [])
+], RemissionComponent);
 exports.RemissionComponent = RemissionComponent;
 //# sourceMappingURL=remission.component.js.map

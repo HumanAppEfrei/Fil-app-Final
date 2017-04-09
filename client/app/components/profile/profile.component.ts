@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import {Auth} from '../../services/auth.service';
-import {PostsComponent} from './components/posts/posts.component';
 
 @Component({
     moduleId: module.id,
